@@ -63,7 +63,9 @@ def slide_down():
     y = r + 1
     y2 = r + 50
     y3 = r + 100
-    color = s.color565(82, 21, 78)
+    color1 = s.color565(82, 21, 78)
+    color2 = s.color565(71, 137, 44)
+    color3 = s.color565(239, 48, 84)
     while True:
         tft.frame_buf.rect(8, board_config.SCREEN_HEIGHT - 24, 100, 14, defs.BLUE, True)
         tft.frame_buf.text(
@@ -79,12 +81,12 @@ def slide_down():
         y3 = (y3 + 1) % (board_config.SCREEN_HEIGHT)
 
         # redraw
-        tft.frame_buf.ellipse(x, y, r, r, color, True)
-        tft.frame_buf.ellipse(x + 60, y2, r, r, color, True)
-        tft.frame_buf.ellipse(x + 120, y3, r, r, color, True)
+        tft.frame_buf.ellipse(x, y, r, r, color1, True)
+        tft.frame_buf.ellipse(x + 60, y2, r, r, color2, True)
+        tft.frame_buf.ellipse(x + 120, y3, r, r, color3, True)
         tft.draw_frame()
         time.sleep(1 / 40)
 
 
-# slide_down()
-random_dots()
+slide_down()
+# random_dots()
