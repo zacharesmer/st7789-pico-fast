@@ -1,0 +1,18 @@
+DISPLAY_DC_PIN = 5  # data/command
+DISPLAY_DO_PIN = 6  # data out toward screen/MOSI
+DISPLAY_SCK_PIN = 8  # clock
+DISPLAY_CS_PIN = 9  # chip select
+DISPLAY_BL_PIN = 10  # backlight
+
+DISPLAY_DMA = 0
+DISPLAY_PIO = 0
+DISPLAY_SM = 0
+# from 12.6.4.1 in rp2350 datasheet
+DISPLAY_REQ_SEL = 0  # PIO0 TX0
+DISPLAY_DMA_ABORT_ADDRESS = 0x50000000 + 0x464
+
+SCREEN_HEIGHT = 240
+SCREEN_WIDTH = 320
+
+TOUCH_I2C_SDA = 2
+TOUCH_I2C_SCL = 3
