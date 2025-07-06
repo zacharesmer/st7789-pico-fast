@@ -1,6 +1,6 @@
 # Fast micropython st7789 driver for pico
 
-This is pretty much a wrapper for a micro python Framebuf that uses DMA to dump its contents onto an st7789 display. 
+This is pretty much a wrapper for a micro python Framebuf that uses DMA to dump its contents onto an st7789 display. [According to this](https://docs.micropython.org/en/latest/library/rp2.DMA.html), DMA in Micro Python is only available on the Raspberry Pi Pico for now.
 
 Framebufs have various built in methods to draw shapes and text:
 
