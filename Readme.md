@@ -17,6 +17,7 @@ I used PIO to communicate with the screen because the badge has its screen attac
 # Ideas for improvements
 This is pretty thrown together, so there are many:
 
+- Shortly after making this I found LVGL and it seems to already have a driver that does something similar
 - Explore double buffering
 - The vsync related pins on the badge aren't hooked up, but if I did have them available I'd try to use them because there's a lot of tearing
 - Find some way to get different fonts into a framebuf

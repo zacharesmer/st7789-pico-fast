@@ -64,8 +64,8 @@ class ST7789V:
             treq_sel=bc.DISPLAY_REQ_SEL,
             bswap=True,
         )
-
-        self.dma1.irq(self.draw_frame)
+        # # for absolute maximum fps, this can be used to automatically refresh
+        # self.dma1.irq(self.draw_frame)
 
     # this is attached to an interrupt that fires every time the screen finishes drawing
     # TODO: hook it up to a second DMA channel so it will run without any CPU intervention
@@ -90,6 +90,7 @@ class ST7789V:
             ctrl=self.dma1_ctrl,
             trigger=True,
         )
+        # self.cs.on()
 
     def send_command(self, cmd):
         # print(f"Sending {cmd}")

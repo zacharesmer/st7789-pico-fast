@@ -42,7 +42,7 @@ def random_dots():
             f"{tft.fps:2.1f} fps", 10, board_config.SCREEN_HEIGHT - 20, defs.WHITE
         )
         denom = random.random()
-        r = round(10 ** (100 / 1 if (denom == 0) else denom))
+        r = round(50 ** (100 / 1 if (denom == 0) else denom))
         x = random.randint(
             board_config.SCREEN_WIDTH // 2 + r + 1, board_config.SCREEN_WIDTH - r - 2
         )
@@ -51,20 +51,21 @@ def random_dots():
             random.randint(0, 255), random.randint(0, 255), random.randint(0, 255)
         )
         tft.frame_buf.ellipse(x, y, r, r, color, True)
-        time.sleep(1 / 100)
         ## uncomment this for touch screen, this function blocks until a touch is detected
         # print(touch.get_one_touch_in_pixels())
+        tft.draw_frame()
+        time.sleep(1 / 40)
 
 
 def slide_down():
-    r = 10
+    r = 15
     x = board_config.SCREEN_WIDTH // 2 + 20
-    y = r
+    y = r + 1
     y2 = r + 50
     y3 = r + 100
     color = s.color565(82, 21, 78)
     while True:
-        tft.frame_buf.rect(8, board_config.SCREEN_HEIGHT - 24, 70, 14, defs.BLUE, True)
+        tft.frame_buf.rect(8, board_config.SCREEN_HEIGHT - 24, 100, 14, defs.BLUE, True)
         tft.frame_buf.text(
             f"{tft.fps:2.1f} fps", 10, board_config.SCREEN_HEIGHT - 20, defs.WHITE
         )
@@ -81,7 +82,8 @@ def slide_down():
         tft.frame_buf.ellipse(x, y, r, r, color, True)
         tft.frame_buf.ellipse(x + 60, y2, r, r, color, True)
         tft.frame_buf.ellipse(x + 120, y3, r, r, color, True)
-        time.sleep(1 / 100)
+        tft.draw_frame()
+        time.sleep(1 / 40)
 
 
 # slide_down()
