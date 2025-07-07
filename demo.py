@@ -1,11 +1,11 @@
 # Demo
 
-import screen.st7789v as s
-import screen.st7789v_definitions as defs
+import st7789v as s
+import st7789v_definitions as defs
 import board_config
 import random
 import time
-from screen.touch import Touchscreen
+from touch import Touchscreen
 
 tft = s.ST7789V()
 touch = Touchscreen()
@@ -88,5 +88,5 @@ def slide_down():
         time.sleep(1 / 40)
 
 
-slide_down()
-# random_dots()
+# slide_down()
+random_dots()

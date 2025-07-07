@@ -1,11 +1,11 @@
 # hold RGB565 pixels in a framebuf and use DMA to push them out over SPI to the TFT LCD XYZ LMNOPQRSTUV
 import framebuf
 import board_config as bc
-from screen.pio_spi import PIO_SPI
+from pio_spi import PIO_SPI
 from machine import Pin, mem32
 import time
 import rp2
-import screen.st7789v_definitions as defs
+import st7789v_definitions as defs
 
 
 def color565(r, g, b):
